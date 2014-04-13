@@ -26,6 +26,7 @@ public class SplashActivity extends Activity {
 			public void run() {
 				
 				Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+				intent.putExtra(EventosLocalesActivity.FILTRO_POR, "splash");
 				startActivity(intent);
 				finish();
 			}

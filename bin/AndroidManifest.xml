@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="12"
+        android:minSdkVersion="16"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -56,6 +56,10 @@
         <activity
             android:name="com.hackatonlima.cultuhacklima.gui.BusquedaActivity"
             android:label="@string/title_activity_busqueda" >
+        </activity>
+        <activity
+            android:name="com.hackatonlima.cultuhacklima.gui.DetalleLugarActivity"
+            android:label="@string/title_activity_detalle_evento" >
         </activity>
     </application>
 

@@ -107,6 +107,7 @@ public final class R {
 		public static final int common_google_play_services_update_title = 0x7f090014;
 		public static final int common_signin_button_text = 0x7f09001f;
 		public static final int common_signin_button_text_long = 0x7f090020;
+		public static final int location_client_powered_by_google = 0x7f090027;
 	}
 	public static final class styleable {
 		public static final int[] AdsAttrs = { 0x7f010070, 0x7f010071, 0x7f010072 };

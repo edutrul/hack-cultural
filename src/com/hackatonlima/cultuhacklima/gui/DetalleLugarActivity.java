@@ -4,27 +4,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.hackatonlima.cultuhacklima.R;
-import com.hackatonlima.cultuhacklima.bean.Evento;
+import com.hackatonlima.cultuhacklima.bean.Lugar;
 import com.hackatonlima.cultuhacklima.bean.QueryData;
 
 
 
-public class DetalleEventoActivity extends FragmentActivity{
+public class DetalleLugarActivity extends FragmentActivity{
 	
 //	private GoogleMap mMap;
 	private LatLng eventoLatLng;
@@ -41,40 +32,39 @@ public class DetalleEventoActivity extends FragmentActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detalle_evento);
 		
-		Bundle bundle = getIntent().getBundleExtra(DashboardActivity.EVENTOS_LISTA_DATA_BUNDLE);
-		List<Evento> eventListData = (List<Evento>) bundle.getSerializable(DashboardActivity.EVENTOS_LISTA_DATA);
-		String eventoNombre = getIntent().getStringExtra(DashboardActivity.EVENTOS_NOMBRE);
+		Bundle bundle = getIntent().getBundleExtra(DashboardActivity.LUGAR_LISTA_DATA_BUNDLE);
+		List<Lugar> lugarListData = (List<Lugar>) bundle.getSerializable(DashboardActivity.LUGAR_LISTA_DATA);
+		String lugarNombre = getIntent().getStringExtra(DashboardActivity.LUGAR_NOMBRE);
 		
-		Evento evento = QueryData.getEventoFromEventoName(eventListData, eventoNombre);
-		String[] arrStringEvento = {
-				"Id: " + evento.getId(),
-				"Categoria: " + evento.getCategoria(),
-				"Nombre: " + evento.getNombre(),
-				"Fecha Inicio: " + new SimpleDateFormat("yyyy-MM-dd").format(new Date(evento.getFechaInicio() * 1000)),
-				"Fecha Fin: " + new SimpleDateFormat("yyyy-MM-dd").format(new Date(evento.getFechaFin() * 1000)),
-				"Hora Inicio: " + evento.getHoraInicio(),
-				"Horario: " + evento.getHorario(),
-				"Artista / Expositor: " + evento.getArtistaExpositor(),
-				"Link Evento: " + evento.getLinkEvento(),
-				"Lugar Venta: " + evento.getLugarVenta(),
-				"Observaciones: " + evento.getObservaciones(),
-				"Imagen A: " + evento.getImagenA(),
-				"Imagen B: " + evento.getImagenB(),
-				"imagen C: " + evento.getImagenC(),
-				"Mapa longitud" + (evento.getLugar() != null ? evento.getLugar().getLongitud() : "fd"),
+		Lugar lugar = QueryData.getLugarFromLugarName(lugarListData, lugarNombre);
+		String[] arrStringLugar = {
+				"Id: " + lugar.getId(),
+				"Categoria: " + lugar.getCategoria(),
+				"Subcategoria: " + lugar.getSubcategoria(),
+				"Nombre: " +  lugar.getNombre(),
+				"Ubicación: " + lugar.getUbicacion(),
+				"Dirección: " + lugar.getDireccion(),
+				"Latitud: " + lugar.getLatitud(),
+				"Longitud: " + lugar.getLongitud(),
+				"Horarios: " + lugar.getHorarios(),
+				"Tarifa: " + lugar.getTarifa(),
+				"Telefono de Contacto: " + lugar.getTelefonoContacto(),
+				"Email: " + lugar.getEmail(),
+				"Página Web: " + lugar.getPaginaWeb(),
 		};
 		
-		((TextView) findViewById(R.id.txt_categoria_detalle)).setText(evento.getCategoria());
-		((TextView) findViewById(R.id.txt_nombre_detalle)).setText(evento.getNombre());
-		((TextView) findViewById(R.id.txt_fecha_inicio_detalle)).setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date(evento.getFechaInicio() * 1000)));
-		((TextView) findViewById(R.id.txt_fecha_fin_detalle)).setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date(evento.getFechaFin() * 1000)));
-		((TextView) findViewById(R.id.txt_hora_inicio_detalle)).setText(evento.getHoraInicio());
-		((TextView) findViewById(R.id.txt_horario_detalle)).setText(evento.getHorario());
-		((TextView) findViewById(R.id.txt_artista_detalle)).setText(evento.getArtistaExpositor());
-		((TextView) findViewById(R.id.txt_link_evento_detalle)).setText(evento.getLinkEvento());
-		((TextView) findViewById(R.id.txt_lugar_venta_detalle)).setText(evento.getLugarVenta());
-		((TextView) findViewById(R.id.txt_observaciones_detalle)).setText(evento.getObservaciones());
-		
+		((TextView) findViewById(R.id.txt_categoria_detalle)).setText(lugar.getCategoria());
+		((TextView) findViewById(R.id.txt_subcategoria_detalle)).setText(lugar.getSubcategoria());
+		((TextView) findViewById(R.id.txt_nombre_detalle)).setText(lugar.getNombre());
+		((TextView) findViewById(R.id.txt_ubicacion_detalle)).setText(lugar.getUbicacion());
+		((TextView) findViewById(R.id.txt_direccion_detalle)).setText(lugar.getDireccion());
+		((TextView) findViewById(R.id.txt_latitud_detalle)).setText(String.valueOf(lugar.getLatitud()));
+		((TextView) findViewById(R.id.txt_longitud_detalle)).setText(String.valueOf(lugar.getLongitud()));
+		((TextView) findViewById(R.id.txt_tarifa_detalle)).setText(lugar.getTarifa());
+		((TextView) findViewById(R.id.txt_telefono_contacto_detalle)).setText(lugar.getTelefonoContacto());
+		((TextView) findViewById(R.id.txt_email_detalle)).setText(lugar.getEmail());
+		((TextView) findViewById(R.id.txt_pagina_web_detalle)).setText(lugar.getPaginaWeb());
+
 //		if (android.os.Build.VERSION.SDK_INT > 9) {
 //            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 //            StrictMode.setThreadPolicy(policy);

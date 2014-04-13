@@ -10,5 +10,6 @@
     <string name="txt_evento">Eventos</string>
     <string name="title_activity_eventos">EventosActivity</string>
     <string name="title_activity_busqueda">BusquedaActivity</string>
+    <string name="title_activity_detalle_lugar">TitleDetallerLugar</string>
 
 </resources>

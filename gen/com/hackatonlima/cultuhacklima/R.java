@@ -1267,22 +1267,22 @@ containing a value of this type.
         public static final int abs__textButton=0x7f04001c;
         public static final int abs__title=0x7f040024;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f040049;
+        public static final int action_settings=0x7f04005a;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f04002f;
-        public static final int evento_imagen=0x7f040043;
+        public static final int evento_imagen=0x7f040054;
         public static final int fullscreen=0x7f040013;
         public static final int homeAsUp=0x7f040006;
         public static final int hybrid=0x7f040018;
         public static final int imag_evento_detalle=0x7f04003c;
-        public static final int img_evento_local=0x7f040046;
+        public static final int img_evento_local=0x7f040057;
         public static final int left=0x7f040010;
         public static final int listMode=0x7f040002;
         public static final int lts_eventos=0x7f04003b;
-        public static final int lts_eventos_locales=0x7f040042;
-        public static final int mapCultuHackLima=0x7f040041;
+        public static final int lts_eventos_locales=0x7f040053;
+        public static final int mapCultuHackLima=0x7f040049;
         public static final int margin=0x7f040012;
-        public static final int nombre_evento_local=0x7f040047;
+        public static final int nombre_evento_local=0x7f040058;
         public static final int none=0x7f040015;
         public static final int normal=0x7f040001;
         public static final int right=0x7f040011;
@@ -1291,15 +1291,32 @@ containing a value of this type.
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
-        public static final int slidingmenumain=0x7f040048;
+        public static final int slidingmenumain=0x7f040059;
         public static final int tabMode=0x7f040003;
         public static final int terrain=0x7f040017;
-        public static final int txt_direccion_detalle=0x7f04003f;
-        public static final int txt_fecha_detalle=0x7f04003e;
-        public static final int txt_fecha_hora_evento=0x7f040045;
-        public static final int txt_nombre_detalle=0x7f04003d;
-        public static final int txt_nombre_evento=0x7f040044;
-        public static final int txt_precio_detalle=0x7f040040;
+        public static final int txt_artista_detalle=0x7f040043;
+        public static final int txt_categoria_detalle=0x7f04003d;
+        public static final int txt_direccion_detalle=0x7f040047;
+        public static final int txt_email_detalle=0x7f040051;
+        public static final int txt_fecha_fin_detalle=0x7f040040;
+        public static final int txt_fecha_hora_evento=0x7f040056;
+        public static final int txt_fecha_inicio_detalle=0x7f04003f;
+        public static final int txt_hora_inicio_detalle=0x7f040041;
+        public static final int txt_horario_detalle=0x7f040042;
+        public static final int txt_horarios_detalle=0x7f04004e;
+        public static final int txt_latitud_detalle=0x7f04004c;
+        public static final int txt_link_evento_detalle=0x7f040044;
+        public static final int txt_longitud_detalle=0x7f04004d;
+        public static final int txt_lugar_venta_detalle=0x7f040045;
+        public static final int txt_nombre_detalle=0x7f04003e;
+        public static final int txt_nombre_evento=0x7f040055;
+        public static final int txt_observaciones_detalle=0x7f040046;
+        public static final int txt_pagina_web_detalle=0x7f040052;
+        public static final int txt_precio_detalle=0x7f040048;
+        public static final int txt_subcategoria_detalle=0x7f04004a;
+        public static final int txt_tarifa_detalle=0x7f04004f;
+        public static final int txt_telefono_contacto_detalle=0x7f040050;
+        public static final int txt_ubicacion_detalle=0x7f04004b;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -1333,14 +1350,15 @@ containing a value of this type.
         public static final int activity_busqueda=0x7f030015;
         public static final int activity_dashboard=0x7f030016;
         public static final int activity_detalle_evento=0x7f030017;
-        public static final int activity_eventos_locales=0x7f030018;
-        public static final int activity_splash=0x7f030019;
-        public static final int layout_eventos=0x7f03001a;
-        public static final int layout_eventos_locales=0x7f03001b;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
-        public static final int sherlock_spinner_item=0x7f03001d;
-        public static final int slide_menu=0x7f03001e;
-        public static final int slidingmenumain=0x7f03001f;
+        public static final int activity_detalle_lugar=0x7f030018;
+        public static final int activity_eventos_locales=0x7f030019;
+        public static final int activity_splash=0x7f03001a;
+        public static final int layout_eventos=0x7f03001b;
+        public static final int layout_eventos_locales=0x7f03001c;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001d;
+        public static final int sherlock_spinner_item=0x7f03001e;
+        public static final int slide_menu=0x7f03001f;
+        public static final int slidingmenumain=0x7f030020;
     }
     public static final class menu {
         public static final int busqueda=0x7f0b0000;
@@ -1389,8 +1407,8 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
-        public static final int action_settings=0x7f090028;
-        public static final int app_name=0x7f090027;
+        public static final int action_settings=0x7f090029;
+        public static final int app_name=0x7f090028;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1485,13 +1503,17 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f090020;
-        public static final int hello_world=0x7f090029;
-        public static final int title_activity_busqueda=0x7f09002f;
-        public static final int title_activity_dashboard=0x7f09002a;
-        public static final int title_activity_detalle_evento=0x7f09002b;
-        public static final int title_activity_eventos=0x7f09002e;
-        public static final int txt_evento=0x7f09002d;
-        public static final int txt_lugar=0x7f09002c;
+        public static final int hello_world=0x7f09002a;
+        /**  Location client code resources (prefix with location_client) 
+         */
+        public static final int location_client_powered_by_google=0x7f090027;
+        public static final int title_activity_busqueda=0x7f090030;
+        public static final int title_activity_dashboard=0x7f09002b;
+        public static final int title_activity_detalle_evento=0x7f09002c;
+        public static final int title_activity_detalle_lugar=0x7f090031;
+        public static final int title_activity_eventos=0x7f09002f;
+        public static final int txt_evento=0x7f09002e;
+        public static final int txt_lugar=0x7f09002d;
     }
     public static final class style {
         /** 
