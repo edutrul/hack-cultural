@@ -6,5 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="title_activity_detalle_evento">DetalleEventoActivity</string>
+    <string name="txt_lugar">Lugar</string>
+    <string name="txt_evento">Eventos</string>
+    <string name="title_activity_eventos">EventosActivity</string>
+    <string name="title_activity_busqueda">BusquedaActivity</string>
 
 </resources>
