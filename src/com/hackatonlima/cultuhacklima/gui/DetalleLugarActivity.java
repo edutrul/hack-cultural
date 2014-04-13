@@ -33,6 +33,7 @@ import com.hackatonlima.cultuhacklima.R;
 import com.hackatonlima.cultuhacklima.bean.Lugar;
 import com.hackatonlima.cultuhacklima.bean.QueryData;
 import com.hackatonlima.cultuhacklima.location.GMapV2Direction;
+import com.hackatonlima.cultuhacklima.location.Social;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -229,32 +230,42 @@ public class DetalleLugarActivity extends SlidingFragmentActivity{
 	
 	
 	
-  public void createNotification(View view) {
-  // Prepare intent which is triggered if the
-  // notification is selected
-  Intent intent = new Intent(this, DetalleLugarActivity.class);
-  PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-  // Build notification
-  // Actions are just fake 
-  Notification noti = new Notification.Builder(this)
-      .setContentTitle("Hey!" + "Nombre del Evento")
-      .setContentText("Lugar del evento").setSmallIcon(R.drawable.icoe)
-      .setContentIntent(pIntent)
-      .addAction(R.drawable.icoe, "Call", pIntent)
-      .addAction(R.drawable.icoe, "More", pIntent)
-      .addAction(R.drawable.icoe, "And more", pIntent).build();
-  NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-  // hide the notification after its selected
-  noti.flags |= Notification.FLAG_AUTO_CANCEL;
-
-  notificationManager.notify(0, noti);
-  
-  
-}
+	  
 	
+	  
+	  public void createNotification(View view) {
+	    // Prepare intent which is triggered if the
+	    // notification is selected
+	    Intent intent = new Intent(this, NotificationReceiverActivity.class);
+	    PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+	
+	    // Build notification
+	    // Actions are just fake 
+	    Notification noti = new Notification.Builder(this)
+	        .setContentTitle("Hey!" + "Nombre del Evento")
+	        .setContentText("Lugar del evento").setSmallIcon(R.drawable.icoe)
+	        .setContentIntent(pIntent)
+	        .addAction(R.drawable.icoe, "Call", pIntent)
+	        .addAction(R.drawable.icoe, "More", pIntent)
+	        .addAction(R.drawable.icoe, "And more", pIntent).build();
+	    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+	    // hide the notification after its selected
+	    noti.flags |= Notification.FLAG_AUTO_CANCEL;
+	
+	    notificationManager.notify(0, noti);
+	
+	  }
 public void dota(View view){
 	Log.v("GOT","Got it");
+}
+
+public void compartir(View view){
+	Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND); 
+    sharingIntent.setType("text/plain");
+    String shareBody = "InkaApp en la #HackatonLima";
+    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+startActivity(Intent.createChooser(sharingIntent, "Share via"));
 }
 	
 

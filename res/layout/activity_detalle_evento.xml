@@ -14,11 +14,21 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/img_evento"/>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Agendar"
-            android:onClick="dota"/>
+            android:onClick="createNotification"/>
+    <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compartir"
+            android:onClick="compartir"/>
+    </LinearLayout>
     
     <LinearLayout 
         android:layout_width="fill_parent"
