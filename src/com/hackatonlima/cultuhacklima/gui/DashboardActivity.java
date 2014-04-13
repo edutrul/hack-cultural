@@ -279,16 +279,16 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 				String itemValue = lugaresFiltradosPorCategoria.get(position).getNombre();
 				  
 			    // Show Alert 
-			    //Toast.makeText(getApplicationContext(),
-			    //  "Position :" + position + "  ListItem : " +itemValue , Toast.LENGTH_LONG)
-			    //  .show();
+			    Toast.makeText(getApplicationContext(),
+			      "Position :" + position + "  ListItem : " +itemValue , Toast.LENGTH_LONG)
+			      .show();
 			    
-				//Bundle bundle = new Bundle();
-				//bundle.putSerializable(LUGAR_LISTA_DATA, (Serializable) lugarListData);
+				Bundle bundle = new Bundle();
+				bundle.putSerializable(LUGAR_LISTA_DATA, (Serializable) lugarListData);
 				Intent intent = new Intent(getApplicationContext(), DetalleLugarActivity.class);
-				intent.putExtra("evento", "" + position);
-			    //intent.putExtra(LUGAR_LISTA_DATA_BUNDLE, bundle);
-			    //intent.putExtra(LUGAR_NOMBRE, itemValue);
+//				intent.putExtra("evento", "" + position);
+			    intent.putExtra(LUGAR_LISTA_DATA_BUNDLE, bundle);
+			    intent.putExtra(LUGAR_NOMBRE, itemValue);
 				startActivityForResult(intent, BASE_REQUEST_CODE);
 			  }
 			

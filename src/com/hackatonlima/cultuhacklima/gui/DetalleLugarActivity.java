@@ -1,11 +1,10 @@
 package com.hackatonlima.cultuhacklima.gui;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -30,12 +29,13 @@ public class DetalleLugarActivity extends FragmentActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_detalle_evento);
+		setContentView(R.layout.activity_detalle_lugar);
 		
+		String lugarNombre = getIntent().getStringExtra(DashboardActivity.LUGAR_NOMBRE);
+		Log.v("LUGAR", "I AM FINE");
 		Bundle bundle = getIntent().getBundleExtra(DashboardActivity.LUGAR_LISTA_DATA_BUNDLE);
 		List<Lugar> lugarListData = (List<Lugar>) bundle.getSerializable(DashboardActivity.LUGAR_LISTA_DATA);
-		String lugarNombre = getIntent().getStringExtra(DashboardActivity.LUGAR_NOMBRE);
-		
+
 		Lugar lugar = QueryData.getLugarFromLugarName(lugarListData, lugarNombre);
 		String[] arrStringLugar = {
 				"Id: " + lugar.getId(),
