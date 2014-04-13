@@ -55,8 +55,8 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 	List<EventoBean> eventos;
 	public static final int BASE_REQUEST_CODE = 1000;
 	private boolean ocultarMenuIzquierdo = false;
-	String lat="";
-	String lon="";
+	static String lat="";
+	static String lon="";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

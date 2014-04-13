@@ -14,6 +14,11 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/img_evento"/>
+    <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agendar"
+            android:onClick="dota"/>
     
     <LinearLayout 
         android:layout_width="fill_parent"
@@ -21,7 +26,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Categoria: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -36,7 +41,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Nombre: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -52,7 +57,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Fecha Inicio: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -67,7 +72,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Fecha Fin: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -82,7 +87,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Hora Inicio: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -97,7 +102,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Horario: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -112,7 +117,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Artista: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -127,7 +132,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Link del Evento: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -142,7 +147,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Lugar de Venta: "
-            android:textColor="#212121"
+            android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -157,7 +162,7 @@
         android:orientation="horizontal">
     <TextView 
             android:text="Observaciones: "
-            android:textColor="#212121"
+             android:textColor="#f7d80c"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     <TextView 
@@ -181,6 +186,7 @@
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"/>
     
+        
     </LinearLayout>
     
     <fragment
@@ -188,6 +194,9 @@
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="fill_parent"
         android:layout_height="300dp" />
+    
+    
+
     
 </LinearLayout>
 </ScrollView>
