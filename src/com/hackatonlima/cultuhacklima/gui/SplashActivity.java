@@ -2,11 +2,15 @@ package com.hackatonlima.cultuhacklima.gui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 
 import com.hackatonlima.cultuhacklima.R;
+import com.hackatonlima.cultuhacklima.location.MyLocation;
+import com.hackatonlima.cultuhacklima.location.MyLocation.LocationResult;
 
 public class SplashActivity extends Activity {
 
@@ -28,6 +32,8 @@ public class SplashActivity extends Activity {
 		}, delayMillis);
         
     }
+    
+    
 
     
     

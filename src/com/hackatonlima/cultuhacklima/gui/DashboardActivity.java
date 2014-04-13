@@ -4,15 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.actionbarsherlock.view.Window;
 import com.hackatonlima.cultuhacklima.R;
 import com.hackatonlima.cultuhacklima.baseadapter.EventoBaseAdapter;
 import com.hackatonlima.cultuhacklima.bean.EventoBean;
+import com.hackatonlima.cultuhacklima.location.MyLocation;
+import com.hackatonlima.cultuhacklima.location.MyLocation.LocationResult;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -24,15 +29,44 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 	List<EventoBean> eventos;
 	public static final int BASE_REQUEST_CODE = 1000;
 	private boolean ocultarMenuIzquierdo = false;
+	String lat="";
+	String lon="";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_dashboard);
-		
+		obtenerDireccion();
 		cargarEventos();
 		crearMenuIzquierdo();
 		
+	}
+	
+	public void obtenerDireccion(){
+		mostrarTiempoIndeterminado();
+		MyLocation myLocation = new MyLocation();
+        myLocation.getLocation(getApplicationContext(), locationResult);
+	}
+	
+	
+	LocationResult locationResult = new LocationResult(){
+        @Override
+        public void gotLocation(Location location){
+        	ocultarTiempoIndeterminado();
+        	lat = ""+location.getLatitude();
+        	lon = ""+location.getLongitude();
+        	Log.v("Look", "lat: " + location.getLatitude()+" lon: "+location.getLongitude());
+        	 
+        }
+    };
+    
+    protected void mostrarTiempoIndeterminado() {
+		setSupportProgressBarIndeterminateVisibility(true);
+	}
+
+	protected void ocultarTiempoIndeterminado() {
+		setSupportProgressBarIndeterminateVisibility(false);
 	}
 	
 	private void crearMenuIzquierdo() {
@@ -96,6 +130,8 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 			long id) {
 		Intent intent = new Intent(getApplicationContext(), DetalleEventoActivity.class);
 		intent.putExtra("evento", ""+position);
+		intent.putExtra("lat", lat);
+		intent.putExtra("lon", lon);
 		startActivityForResult(intent, BASE_REQUEST_CODE);
 	}
 	

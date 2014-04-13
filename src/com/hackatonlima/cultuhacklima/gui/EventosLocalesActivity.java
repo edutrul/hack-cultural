@@ -32,8 +32,6 @@ public class EventosLocalesActivity extends Activity implements OnItemClickListe
 		String result = intent.getStringExtra("go");
 		Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 		
-		
-		
 		if(result.equals("Local")){
 			cargarLocales();
 		}else{
