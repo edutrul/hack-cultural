@@ -16,6 +16,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+        android:background="#fff"
         android:orientation="horizontal">
         
         <ImageView 
@@ -23,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/icoe"
+            android:src="@drawable/icono_inmueble"
             android:onClick="goLugares"/>
         
         <ImageView 
@@ -31,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/icoe"
+            android:src="@drawable/icono_monumento"
             android:onClick="goBusquedaAd"/>
         
         <ImageView 
@@ -39,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/icoe"
+            android:src="@drawable/icono_teatro"
             android:onClick="goEvento"/>
         
     </LinearLayout>

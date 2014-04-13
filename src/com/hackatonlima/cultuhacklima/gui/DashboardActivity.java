@@ -65,10 +65,10 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_dashboard);
 		obtenerDireccion();
-		loadDataEventos("eventos-hack.csv");
+		loadDataEventos("eventos-hacks-mvp.csv");
 		
 		// LoadData.
-		loadData("lugares-hack.csv");
+		loadData("lugares-hacks-mvp.csv");
 		
 		crearMenuIzquierdo();
 		
@@ -143,6 +143,9 @@ public class DashboardActivity extends SlidingFragmentActivity   implements OnIt
 	
 	public void goBusquedaAd(View view){
 		Intent intent = new Intent(getApplicationContext(),BusquedaActivity.class);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable(LUGAR_LISTA_DATA, (Serializable) lugarListData);
+	    intent.putExtra(LUGAR_LISTA_DATA_BUNDLE, bundle);
 		startActivity(intent);
 	}
 	
